@@ -5,7 +5,7 @@
 https://github.com/frizus/ruby-test-work1
 
 ```sh
-git clone -b for-ruby-test-work1 git@github.com:frizus/ruby_2_docker.git ruby-test-work1/
+git clone -b for-ruby-test-work1 https://github.com/frizus/ruby_2_docker.git ruby-test-work1/
 cd ruby-test-work1
 make setup
 make run # запускает сервер на http://localhost:3000
