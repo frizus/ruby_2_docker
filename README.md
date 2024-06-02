@@ -11,6 +11,8 @@ make setup
 make run # запускает сервер на http://localhost:3000
 ```
 
+Сайт находится в папке `web/`
+
 ### WSL2 Ubuntu:
 
 #### Новая группа для текущего пользователя:
@@ -45,17 +47,16 @@ git config --global --add safe.directory "*"
 ```bash
 echo "\
 umask 002\
-" >> /etc/wsl.conf
+" >> /etc/.bashrc
 ```
 
 #### Настройка WSL:
 В `/etc/wsl.conf` добавить (нужны root-права):
 ```bash
-sudo echo "\
-\
-[filesystem]\
-umask=002\
-" >> /etc/wsl.conf
+echo "
+[filesystem]
+umask=002
+" | sudo tee -a /etc/wsl.conf
 ```
 
 ### Windows
