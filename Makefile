@@ -17,6 +17,9 @@ download-app-and-run-setup:
 down:
 	docker-compose stop || true
 
+test:
+	docker-compose run --rm ruby bash --login -c "make test"
+
 setup: down build download-app-and-run-setup
 
 install: setup
@@ -28,3 +31,7 @@ launch: run
 compose: run
 
 force-setup: down build-no-cache download-app-and-run-setup
+
+force-install: force-setup
+
+.PHONY: test
