@@ -1,20 +1,23 @@
 run:
 	docker-compose up -d
 
-install:
-	cp -n .env.default .env || true
-	docker-compose run --rm ruby-work-test1-ruby make setup
-
 build:
+	cp -n .env.default .env || true
 	docker-compose build
+
+build-no-cache:
+	cp -n .env.default .env || true
+	docker-compose build --no-cache
 
 down:
 	docker-compose stop || true
 
-setup: down build install
+setup: down build
 
 start: run
 
 launch: run
 
 compose: run
+
+force-setup: down build-no-cache

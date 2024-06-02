@@ -91,3 +91,15 @@ RUN echo "\nexport NVM_DIR=\"/home/docker_user/.nvm\"\n" \
 	"[ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\"  # This loads nvm bash_completion\n" >> ~/.bashrc
 
 WORKDIR /home/docker_user/web
+
+SHELL ["/bin/bash", "-c"]
+
+RUN git clone https://github.com/frizus/ruby-test-work1.git ./
+
+RUN source ~/.rvm/scripts/rvm && \
+    export NVM_DIR=/home/docker_user/.nvm && \
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
+    gem install bundler -v 1.17.3 && \
+    make setup
+
+SHELL ["/bin/sh", "-c"]
