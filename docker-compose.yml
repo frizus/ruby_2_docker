@@ -9,7 +9,7 @@ services:
             POSTGRES_USER: ${POSTGRES_USER}
             POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
         ports:
-            - "5433:5433"
+            - "5432:5432"
     ruby:
         build:
             context: "./ruby"
@@ -21,6 +21,8 @@ services:
                 - RUBY_VERSION=${RUBY_VERSION}
         volumes_from:
             - disk
+        command:
+            - make run
         environment:
             POSTGRES_HOST: ${POSTGRES_HOST}
             POSTGRES_DB: ${POSTGRES_DB}

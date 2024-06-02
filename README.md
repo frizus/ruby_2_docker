@@ -1,5 +1,14 @@
 Контейнер для Ruby версии 2.2
 
+# Установка для ruby-test-work1
+
+https://github.com/frizus/ruby-test-work1
+
+```sh
+make setup
+make run # запускает сервер на http://localhost:3000
+```
+
 ### WSL2 Ubuntu:
 
 #### Новая группа для текущего пользователя:
