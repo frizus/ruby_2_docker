@@ -46,8 +46,8 @@ git config --global --add safe.directory "*"
 #### Настройка терминала:
 В `~/.bashrc` добавить:
 ```bash
-echo "\
-umask 002\
+echo "
+umask 002
 " >> /etc/.bashrc
 ```
 
