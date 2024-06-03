@@ -48,7 +48,7 @@ git config --global --add safe.directory "*"
 ```bash
 echo "
 umask 002
-" >> /etc/.bashrc
+" >> ~/.bashrc
 ```
 
 #### Настройка WSL:
